@@ -1,4 +1,4 @@
-# student-management# Study Management System
+# Study Management System
 
 A comprehensive Django-based web application for managing study records and academic activities, built with modern web technologies and deployed on Vercel.
 
