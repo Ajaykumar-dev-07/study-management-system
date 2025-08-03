@@ -1,0 +1,30 @@
+{
+    "builds": [
+        {
+            "src": "studyManagement/wsgi.py",
+            "use": "@vercel/python",
+            "config": {
+                "maxLambdaSize": "15mb",
+                "runtime": "python3.9"
+            }
+        },
+        {
+            "src": "static/**",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/static/(.*)",
+            "dest": "/static/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "studyManagement/wsgi.py"
+        }
+    ],
+    "env": {
+        "DEBUG": "False",
+        "SECRET_KEY": "Kx8vN2pQ9mL4tR7sY1wE6uI3oP5aS0dF8gH2jK9nM7cV4bX1zA6qW3eR5tY8uI2oP"
+    }
+}

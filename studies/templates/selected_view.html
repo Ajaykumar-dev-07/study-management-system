@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="selected-view">
+    <h2>Study Details</h2>
+    
+    <table class="table-responsive detail-table">
+        <thead class="table-head">
+            <tr class="table-row">
+                <th>Attribute</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody class="table-body">
+            <tr>
+                <td><strong>Study Name</strong></td>
+                <td>{{ study.study_name }}</td>
+            </tr>
+            <tr>
+                <td><strong>Study Phase</strong></td>
+                <td>{{ study.study_phase }}</td>
+            </tr>
+            <tr>
+                <td><strong>Sponsor Name</strong></td>
+                <td>{{ study.sponsor_name }}</td>
+            </tr>
+            <tr>
+                <td><strong>Study Description</strong></td>
+                <td>{{ study.study_description }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="back-actions">
+        <a href="{% url 'view_all_studies' %}" class="back-btn">Back to Study List</a>
+        <a href="{% url 'edit_study' study.id %}" class="edit-btn">Edit Study</a>
+        <a href="{% url 'delete_study' study.id %}" class="remove-btn">Delete Study</a>
+    </div>
+</div>
+{% endblock %}

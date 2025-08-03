@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Manager</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <h1 class="logo">Study Management</h1>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="links">
+            <ul>
+                <li><a href="{% url 'view_all_studies' %}" id="view-all-task">View All Studies</a></li>
+                <li><a href="{% url 'add_study' %}" id="add-task">Add Study</a></li>
+            </ul>
+        </div>
+
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ajay Kumar - All rights reserved.</p>
+        <div class="footer-social">
+            <h2>Connect with us</h2>
+            <ul>
+                <li><a href="https://github.com/Ajaykumar-dev-07"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://x.com/ak_mrclean"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/ajay-kumar-b-144420251"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="mailto:jayakodiajay7@gmail.com"><i class="fas fa-envelope"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
